@@ -37,10 +37,29 @@ class School{
         }
         return $rc;
     }
-    function addStudent(){
-
+    function addStudent($id, $firstname, $middlename, $lastname){
+        $rc = -1;
+        $t = new Student($id, $firstname, $middlename, $lastname);
+        
+        if (!isset($this->students[$id])){
+            $this->students[$id] = $t;   
+            $rc = 0;
+        }
+        else{
+            echo "this student is already registered\n".$t->__toString(); 
+        }        
+        return $rc;
     }
-    function removeStudent(){
+    function removeStudent($id):int{
+        $rc = -1;
+        if (isset($this->students[$id])){
+            unset($this->students[$id]);   
+            $rc = 0;
+        }
+        else{
+            echo "no student with index $id was found\n";
+        }
+        return $rc;
 
     }
     function addSchoolClass(){

@@ -1,8 +1,7 @@
 <?php
 require_once 'Person.php';
 
-Class Teacher extends Person
-{
+Class Teacher extends Person{
     private $class = Array();
     private float $salary;
     
