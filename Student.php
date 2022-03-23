@@ -2,10 +2,11 @@
 require_once 'Person.php';
 
 Class Student extends Person{
-    private string $class;
+    //private string $class;
+    private $class = Array();
 
     function __construct($id, $firstname, $middlename, $lastname){
-        parent::__construct($id,$firstname, $middlename, $lastname);
+        parent::__construct($id, $firstname, $middlename, $lastname);
     }
 
     public function __toString()

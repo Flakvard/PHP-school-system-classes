@@ -1,5 +1,6 @@
 <?php
 require_once 'Teacher.php';
+require_once 'Student.php';
 require_once 'SchoolClass.php';
 class School{
 
@@ -7,6 +8,7 @@ class School{
     public string $adress;
     private $teachers = Array();
     private $students = Array();
+    private $SchoolClass = Array();
     
     function __construct($name, $adress){
         $this->name = $name;
@@ -39,14 +41,14 @@ class School{
     }
     function addStudent($id, $firstname, $middlename, $lastname){
         $rc = -1;
-        $t = new Student($id, $firstname, $middlename, $lastname);
+        $s = new Student($id, $firstname, $middlename, $lastname);
         
         if (!isset($this->students[$id])){
-            $this->students[$id] = $t;   
+            $this->students[$id] = $s;   
             $rc = 0;
         }
         else{
-            echo "this student is already registered\n".$t->__toString(); 
+            echo "this student is already registered\n".$s->__toString(); 
         }        
         return $rc;
     }
@@ -62,8 +64,11 @@ class School{
         return $rc;
 
     }
-    function addSchoolClass(){
-
+    function addSchoolClass($name):string{
+        $rc = -1;
+        $name = new SchoolClass($name);
+      
+        return $rc;
     }
     function removeSchoolClass(){
 
