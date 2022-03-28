@@ -64,10 +64,16 @@ class School{
         return $rc;
 
     }
-    function addSchoolClass($name):string{
+    function addSchoolClass($id,$ClassName){
         $rc = -1;
-        $name = new SchoolClass($name);
-      
+        $Clname = new SchoolClass($id,$ClassName);
+        if (!isset($this->SchoolClass[$id])){
+            $this->SchoolClass[$id] = $Clname;   
+            $rc = 0;
+        }
+        else{
+            echo "this class is already registered\n".$Clname->getSchoolClassName(); 
+        }        
         return $rc;
     }
     function removeSchoolClass(){

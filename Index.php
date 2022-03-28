@@ -15,17 +15,19 @@ $rc3 =$s->removeTeacher(2);
 
 #test add remove student 
 #add a teacher - expected $rc = 0
-$rc0 = $s->addStudent(1,"Marni","Falkvard","Joensen");
+$rc0 = $s->addStudent(7,"Marni","Falkvard","Joensen");
 #try to add same student - expected $rc = -1
-$rc1 = $s->addStudent(1,"Marni","Falkvard","Joensen");
+$rc1 = $s->addStudent(7,"Marni","Falkvard","Joensen");
 #remove student - expected $rc = 0
 $rc2 = $s->removeStudent(2);
 #remove not existing student - expected $rc = -1
 $rc3 =$s->removeStudent(2);
 
 #test add SchoolClass
-$rc0 = $s->addSchoolClass("Softwarekonstruktion");
+$rc0 = $s->addSchoolClass(9,"Softwarekonstruktion 2");
+$rc0 = $s->addSchoolClass(9,"Systemudvikling 2");
 #try to add same student - expected $rc = -1
+
 
 #test add teacher then add a SchoolClass to the teacher 
 #test add teacher then add a same SchoolClass to the teacher - fail
